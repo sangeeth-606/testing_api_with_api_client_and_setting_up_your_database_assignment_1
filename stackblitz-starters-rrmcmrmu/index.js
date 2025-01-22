@@ -9,7 +9,7 @@ app.post('/students/above-threshold', (req, res) => {
   const { threshold } = req.body;
 
   if (threshold === undefined || typeof threshold !== 'number') {
-     res.send({ error: "'threshold' must be a number and is required" });
+     res.send({ error: "'invalid input" });
   }
 
   const filteredStudents = studentData.filter((student) => student.total > threshold);
