@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 app.use(express.json());
-
+const PORT = 3467 ;
 const studentData = JSON.parse(fs.readFileSync('./data.json', 'utf-8'));
 
 app.post('/students/above-threshold', (req, res) => {
@@ -21,7 +21,7 @@ app.post('/students/above-threshold', (req, res) => {
   });
 });
 
-const PORT = 3467 || 8888;
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
